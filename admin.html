@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <div id="admin-app">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <div class="header-icons">
+                <a href="index.html" class="btn primary">Back to Shop</a>
+            </div>
+        </header>
+        <main>
+            <section id="orders-section">
+                <h2>Customer Orders</h2>
+                <div id="orders-list">
+                    <!-- Orders will be dynamically loaded here -->
+                </div>
+            </section>
+            <section id="products-section">
+                <h2>Manage Products</h2>
+                <div id="product-list">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+                <button class="btn primary" onclick="showAddProductForm()">Add New Product</button>
+            </section>
+        </main>
+
+        <!-- Add Product Modal -->
+        <div id="add-product-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('add-product-modal')">&times;</span>
+                <h2>Add New Product</h2>
+                <form id="add-product-form">
+                    <label for="product-name">Name:</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                    <label for="product-price">Price:</label>
+                    <input type="text" id="product-price" name="product-price" required>
+                    <label for="product-description">Description:</label>
+                    <input type="text" id="product-description" name="product-description" required>
+                    <label for="product-image">Image URL:</label>
+                    <input type="text" id="product-image" name="product-image" required>
+                    <button type="submit" class="btn primary">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
